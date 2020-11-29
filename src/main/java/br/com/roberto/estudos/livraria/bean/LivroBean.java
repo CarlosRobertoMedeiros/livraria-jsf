@@ -1,11 +1,11 @@
 package br.com.roberto.estudos.livraria.bean;
 
 import br.com.roberto.estudos.livraria.dao.DAO;
-import br.com.roberto.estudos.livraria.modelo.Autor;
 import br.com.roberto.estudos.livraria.modelo.Livro;
 
 import javax.faces.bean.ManagedBean;
 import javax.inject.Inject;
+
 
 @ManagedBean
 public class LivroBean {

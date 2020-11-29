@@ -6,27 +6,26 @@ package br.com.roberto.estudos.livraria.modelo;
  */
 
 import javax.persistence.*;
-import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 @Entity
-public class Livro implements Serializable {
+public class Livro {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue
     private Integer id;
 
     private String titulo;
     private String isbn;
     private double preco;
-    private String dataLancamento;
 
-    public Livro() {
-    }
+    @Temporal(TemporalType.DATE)
+    private Calendar dataLancamento = Calendar.getInstance();
 
     @ManyToMany
-    private List<Autor> autores = new ArrayList<>();
+    private List<Autor> autores = new ArrayList<Autor>();
 
     public List<Autor> getAutores() {
         return autores;
@@ -36,12 +35,27 @@ public class Livro implements Serializable {
         this.autores.add(autor);
     }
 
-    public void removeAutor(Autor autor) {
-        this.autores.remove(autor);
+    public Livro() {
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getTitulo() {
         return titulo;
+    }
+
+    public Calendar getDataLancamento() {
+        return dataLancamento;
+    }
+
+    public void setDataLancamento(Calendar dataLancamento) {
+        this.dataLancamento = dataLancamento;
     }
 
     public void setTitulo(String titulo) {
@@ -64,19 +78,4 @@ public class Livro implements Serializable {
         this.preco = preco;
     }
 
-    public String getDataLancamento() {
-        return dataLancamento;
-    }
-
-    public void setDataLancamento(String dataLancamento) {
-        this.dataLancamento = dataLancamento;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
 }

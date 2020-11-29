@@ -30,3 +30,7 @@ build/
 ### VS Code ###
 .vscode/
 /.metadata/
+
+
+## Docker ###
+/docker/mariadb
