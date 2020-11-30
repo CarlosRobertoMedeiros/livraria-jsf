@@ -11,6 +11,7 @@ import java.util.Calendar;
 import java.util.List;
 
 @Entity
+@Table(name = "TB_Livro", schema = "APP")
 public class Livro {
 
     @Id

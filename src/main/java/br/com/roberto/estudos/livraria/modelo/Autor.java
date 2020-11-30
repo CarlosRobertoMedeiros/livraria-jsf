@@ -8,8 +8,11 @@ package br.com.roberto.estudos.livraria.modelo;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Table;
+import java.lang.annotation.Target;
 
 @Entity
+@Table(name = "TB_Autor", schema = "APP")
 public class Autor {
 
     @Id

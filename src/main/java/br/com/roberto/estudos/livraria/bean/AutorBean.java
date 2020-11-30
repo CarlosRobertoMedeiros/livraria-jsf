@@ -3,11 +3,11 @@ package br.com.roberto.estudos.livraria.bean;
 import br.com.roberto.estudos.livraria.dao.GenericCrudDAO;
 import br.com.roberto.estudos.livraria.modelo.Autor;
 
-import javax.faces.bean.ManagedBean;
 import javax.inject.Inject;
+import javax.inject.Named;
 import java.io.Serializable;
 
-@ManagedBean
+@Named
 public class AutorBean implements Serializable {
 
     @Inject

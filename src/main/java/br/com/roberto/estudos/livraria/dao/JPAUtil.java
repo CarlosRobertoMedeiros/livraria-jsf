@@ -13,19 +13,16 @@ import javax.persistence.PersistenceContext;
 
 @Named
 public class JPAUtil {
-//    @PersistenceContext(unitName = "livrariaDS")
-//    private EntityManager em;
 
+    @PersistenceContext(unitName = "livrariaDS")
+    private EntityManager emf;
 
-    public JPAUtil() {
-    }
-
-    private static EntityManagerFactory emf = Persistence
-            .createEntityManagerFactory("livrariaDS");
+//    private static EntityManagerFactory emf = Persistence
+//            .createEntityManagerFactory("livrariaDS");
 
     public EntityManager getEntityManager() {
-        return emf.createEntityManager();
-//        return em;
+//        return emf.createEntityManager();
+        return emf;
     }
 
     public void close() {
