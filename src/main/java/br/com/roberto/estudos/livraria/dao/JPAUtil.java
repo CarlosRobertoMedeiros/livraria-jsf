@@ -5,20 +5,30 @@ package br.com.roberto.estudos.livraria.dao;
  *  @autor    : roberto
  */
 
+import javax.inject.Named;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import javax.persistence.PersistenceContext;
 
+@Named
 public class JPAUtil {
+//    @PersistenceContext(unitName = "livrariaDS")
+//    private EntityManager em;
+
+
+    public JPAUtil() {
+    }
 
     private static EntityManagerFactory emf = Persistence
             .createEntityManagerFactory("livrariaDS");
 
     public EntityManager getEntityManager() {
         return emf.createEntityManager();
+//        return em;
     }
 
-    public void close(EntityManager em) {
-        em.close();
+    public void close() {
+        emf.close();
     }
 }

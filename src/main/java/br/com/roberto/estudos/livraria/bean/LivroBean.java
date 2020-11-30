@@ -1,6 +1,6 @@
 package br.com.roberto.estudos.livraria.bean;
 
-import br.com.roberto.estudos.livraria.dao.DAO;
+import br.com.roberto.estudos.livraria.dao.GenericCrudDAO;
 import br.com.roberto.estudos.livraria.modelo.Livro;
 
 import javax.faces.bean.ManagedBean;
@@ -13,7 +13,7 @@ public class LivroBean {
     private Livro livro = new Livro();
 
     @Inject
-    private DAO<Livro> dao;
+    private GenericCrudDAO<Livro> dao;
 
     public Livro getLivro() {
         return livro;

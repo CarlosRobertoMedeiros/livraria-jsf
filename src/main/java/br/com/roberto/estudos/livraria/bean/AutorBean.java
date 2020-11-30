@@ -1,6 +1,6 @@
 package br.com.roberto.estudos.livraria.bean;
 
-import br.com.roberto.estudos.livraria.dao.DAO;
+import br.com.roberto.estudos.livraria.dao.GenericCrudDAO;
 import br.com.roberto.estudos.livraria.modelo.Autor;
 
 import javax.faces.bean.ManagedBean;
@@ -10,10 +10,10 @@ import java.io.Serializable;
 @ManagedBean
 public class AutorBean implements Serializable {
 
-    private Autor autor = new Autor();
-
     @Inject
-    private DAO<Autor> dao;
+    private GenericCrudDAO<Autor> dao;
+
+    private Autor autor = new Autor();
 
     public Autor getAutor() {
         return autor;
