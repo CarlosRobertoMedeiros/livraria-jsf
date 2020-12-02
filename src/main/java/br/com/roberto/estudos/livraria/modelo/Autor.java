@@ -5,18 +5,15 @@ package br.com.roberto.estudos.livraria.modelo;
  *  @autor    : roberto
  */
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.lang.annotation.Target;
 
 @Entity
-@Table(name = "TB_Autor", schema = "APP")
+@Table(name = "TB_Autor" , schema = "app")
 public class Autor {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
     private String nome;
 

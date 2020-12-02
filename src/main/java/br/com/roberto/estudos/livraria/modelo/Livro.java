@@ -11,11 +11,11 @@ import java.util.Calendar;
 import java.util.List;
 
 @Entity
-@Table(name = "TB_Livro", schema = "APP")
+@Table(name = "TB_Livro" , schema = "app")
 public class Livro {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
     private String titulo;
